@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 
@@ -13,6 +11,9 @@ func main() {
 	}
 
 	newBill := storeBill("breakfast", menu, 3.5)
+
+	newBill.addItemToBill("tea", 3.99)
+	newBill.updateTip(4)
 
 	fmt.Println(newBill.format())
 }
