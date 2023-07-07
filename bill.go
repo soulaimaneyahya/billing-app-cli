@@ -11,7 +11,6 @@ type bill struct {
 	tip float32
 }
 
-
 // store new bill
 func storeBill(name string, menu map[string]float32, tip float32) bill {
 	return bill{
@@ -43,7 +42,7 @@ func (b bill) format() string {
 	}
 
 	// add total
-	fs += fmt.Sprintf("%-25v ...$%0.2f", "total:", total)
+	fs += fmt.Sprintf("%-25v ...$%0.2f", "Total:", total)
 
 	return fs
 }
