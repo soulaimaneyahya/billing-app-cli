@@ -11,15 +11,6 @@ type bill struct {
 	tip float32
 }
 
-// store new bill
-func storeBill(name string, menu map[string]float32, tip float32) bill {
-	return bill{
-		name: name,
-		menu: menu,
-		tip: tip,
-	}
-}
-
 // string helpers
 func ucwords(str string) string {
 	if len(str) == 0 {
@@ -30,9 +21,30 @@ func ucwords(str string) string {
 	return firstLetter + restOfStr
 }
 
+// store new bill
+func storeBill(name string, menu map[string]float32, tip float32) bill {
+	return bill{
+		name: name,
+		menu: menu,
+		tip: tip,
+	}
+}
+
+// update tip
+func (b *bill) updateTip(tip float32) {
+	(*b).tip = tip
+	// b.tip = tip
+}
+
+// add item to bill
+func (b *bill) addItemToBill(name string, price float32) {
+	b.menu[name] = price
+}
+
 // Receiver functions
-func (b bill) format() string {
-	fs := "Bill breakdown:\n"
+func (b *bill) format() string {
+	fs := fmt.Sprintf("Bill Breakdown (%v):\n", ucwords(b.name))
+
 	var total float32 = 0
 
 	// list items
@@ -42,7 +54,9 @@ func (b bill) format() string {
 	}
 
 	// add total
-	fs += fmt.Sprintf("%-25v ...$%0.2f", "Total:", total)
+	fs += fmt.Sprintf("\n%v %-15v ...$%0.2f", ucwords(b.name), "Tip:", b.tip)
+	total += b.tip
+	fs += fmt.Sprintf("\n%-25v ...$%0.2f", "Total:", total)
 
 	return fs
 }
