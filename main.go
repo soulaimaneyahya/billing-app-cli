@@ -14,5 +14,5 @@ func main() {
 
 	newBill := storeBill("breakfast", menu, 3.5)
 
-	fmt.Println(newBill)
+	fmt.Println(newBill.format())
 }
