@@ -22,11 +22,11 @@ func ucwords(str string) string {
 }
 
 // store new bill
-func storeBill(name string, menu map[string]float32, tip float32) bill {
+func newBill(name string) bill {
 	return bill{
 		name: name,
-		menu: menu,
-		tip: tip,
+		menu: map[string]float32{},
+		tip: 0,
 	}
 }
 
@@ -37,7 +37,7 @@ func (b *bill) updateTip(tip float32) {
 }
 
 // add item to bill
-func (b *bill) addItemToBill(name string, price float32) {
+func (b *bill) addItem(name string, price float32) {
 	b.menu[name] = price
 }
 
