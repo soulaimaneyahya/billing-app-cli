@@ -18,7 +18,7 @@ This is a command-line billing application built using Go programming language. 
 - Run the application:
 
    ```shell
-    go run main.go bill.go
+    go run main.go types.go bill.go
    ```
 
 ## Contributing
