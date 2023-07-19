@@ -5,12 +5,6 @@ import (
 	"strings"
 )
 
-type bill struct {
-	name string
-	menu map[string]float32
-	tip float32
-}
-
 // string helpers
 func ucwords(str string) string {
 	if len(str) == 0 {
@@ -26,7 +20,7 @@ func newBill(name string) bill {
 	return bill{
 		name: name,
 		menu: map[string]float32{},
-		tip: 0,
+		tip:  0,
 	}
 }
 
@@ -34,6 +28,11 @@ func newBill(name string) bill {
 func (b *bill) updateTip(tip float32) {
 	(*b).tip = tip
 	// b.tip = tip
+}
+
+func (b *bill) updateName(name string) {
+	(*b).name = name
+	// b.name = name
 }
 
 // add item to bill
