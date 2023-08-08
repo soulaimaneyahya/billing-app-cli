@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -58,4 +59,16 @@ func (b *bill) format() string {
 	fs += fmt.Sprintf("\n%-25v ...$%0.2f", "Total:", total)
 
 	return fs
+}
+
+// save
+func (b *bill) save() {
+	data := []byte(b.format())
+	err := os.WriteFile("bills/"+b.name+".txt", data, 0644)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("bill was saved to file")
 }

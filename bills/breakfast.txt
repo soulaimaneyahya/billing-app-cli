@@ -1,0 +1,6 @@
+Bill Breakdown (Breakfast):
+Coffee:                   ...$5.00
+Cake:                     ...$9.00
+
+Breakfast Tip:            ...$2.00
+Total:                    ...$16.00
