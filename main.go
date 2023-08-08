@@ -61,7 +61,8 @@ func promptOptions(b bill) error {
 		fmt.Println("tip updated - ", t32)
 		return promptOptions(b)
 	case "s":
-		fmt.Println("you choose to save the bill:\n", b.format())
+		b.save()
+		fmt.Println("you choose to save the bill: ", b.name)
 	default:
 		return fmt.Errorf("error: That was not a valid option...")
 	}
