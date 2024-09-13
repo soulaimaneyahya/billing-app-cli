@@ -11,15 +11,33 @@ This is a command-line billing application built using Go programming language. 
 
 - Clone the repository:
 
-   ```shell
-   git clone https://github.com/soulaimaneyahya/go-billing-app-cli.git
-   ```
+```shell
+git clone https://github.com/soulaimaneyahya/go-billing-app-cli.git
+```
 
-- Run the application:
+### Usage
 
-   ```shell
-    go run main.go types.go bill.go
-   ```
+1. Compile billing-app-cli:
+
+```sh
+go mod init billing-app-cli && go mod tidy
+```
+
+```sh
+make build
+```
+
+```sh
+make run
+```
+
+```sh
+make clean
+```
+
+```shell
+go run main.go types.go bill.go
+```
 
 ## Contributing
 
