@@ -26,6 +26,10 @@ go mod init billing-app-cli && go mod tidy
 ```
 
 ```sh
+go fmt ./src/*.go
+```
+
+```sh
 make build
 ```
 
