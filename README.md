@@ -1,5 +1,7 @@
 # Go Billing App CLI
 
+<img src="./imgs/2.png" alt="cli-img" />
+
 This is a command-line billing application built using Go programming language. It provides a simple solution for generating a file.txt containing billing information.
 
 ## Features

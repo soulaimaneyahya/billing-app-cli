@@ -3,6 +3,7 @@
 # Variables
 SRC_DIR := ./src
 DIST_DIR := ./dist
+BILLS_DIR := ./bills/*.txt
 MAIN_BINARY := $(DIST_DIR)/main
 
 # Default target
@@ -20,3 +21,4 @@ run: build
 # Clean target
 clean:
 	rm -f $(MAIN_BINARY)
+	rm -f $(BILLS_DIR)
