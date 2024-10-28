@@ -7,10 +7,14 @@ BILLS_DIR := ./bills/*.txt
 MAIN_BINARY := $(DIST_DIR)/main
 
 # Default target
-all: build
+all: fmt build
+
+# Format target
+fmt:
+	go fmt $(SRC_DIR)/*.go
 
 # Build target
-build:
+build: fmt
 	mkdir -p $(DIST_DIR)
 	go build -o $(MAIN_BINARY) $(SRC_DIR)
 
