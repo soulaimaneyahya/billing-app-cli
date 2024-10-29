@@ -69,7 +69,7 @@ func promptOptions(b bill) error {
 		b.save()
 		fmt.Println("you choose to save the bill: ", b.name)
 	default:
-		return fmt.Errorf("error: That was not a valid option...")
+		return fmt.Errorf("error: That was not a valid option")
 	}
 
 	return nil
