@@ -13,8 +13,12 @@ all: fmt build
 fmt:
 	go fmt $(SRC_DIR)/*.go
 
+# Golint
+golint:
+	golint $(SRC_DIR)/
+
 # Build target
-build: fmt
+build: golint
 	mkdir -p $(DIST_DIR)
 	go build -o $(MAIN_BINARY) $(SRC_DIR)
 

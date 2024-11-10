@@ -8,6 +8,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
 )
@@ -68,16 +69,26 @@ func promptOptions(b bill) error {
 		b.save()
 		fmt.Println("you choose to save the bill: ", b.name)
 	default:
-		return fmt.Errorf("error: That was not a valid option...")
+		return fmt.Errorf("error: That was not a valid option")
 	}
 
 	return nil
 }
 
 func main() {
+	printMemUsage("Before Allocation")
+
 	mybill := createBill()
 
 	if err := promptOptions(mybill); err != nil {
 		fmt.Println("Error:", err)
 	}
+
+	// Reassign empty struct
+	mybill = bill{}
+
+	// Trigger garbage collection manually for demonstration
+	fmt.Println(mybill)
+	runtime.GC()
+	printMemUsage("After GC")
 }
